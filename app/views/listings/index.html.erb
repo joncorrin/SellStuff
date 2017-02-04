@@ -2,7 +2,7 @@
 
 <h1>Listings</h1>
 
-<table>
+<table class="striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +18,9 @@
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', listing, class:"waves-effect waves-teal btn-flat" %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing), class:"waves-effect waves-teal btn-flat"  %></td>
+        <td><%= link_to 'Destroy', listing, class:"waves-effect waves-teal btn-flat",  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<a href="<%= new_listing_path %>", class="btn-floating btn-large waves-effect waves-light red">
+  <i class="material-icons">add</i>
+</a>

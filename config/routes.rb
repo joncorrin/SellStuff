@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :listings
-  root 'pages#about'
+  root 'listings#index'
+
+  get 'pages/about'
 
   get 'pages/contact'
 

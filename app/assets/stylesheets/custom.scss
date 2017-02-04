@@ -4,3 +4,24 @@
 $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("yellow", "base") !default;
 @import "materialize";
+
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+
+
+.btn-flat:focus, .btn-flat:hover {
+  text-decoration: none;
+  color: #333
+}
+
+input[type="file"] {
+    display: none;
+}

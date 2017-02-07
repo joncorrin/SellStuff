@@ -5,10 +5,51 @@ $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("yellow", "base") !default;
 @import "materialize";
 
+.card.large img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.blue.accent-4 {
+  background-color: #ffffff !important;
+}
+
+.brand-logo {
+  color: #ff8b00 !important;
+  font-family: guardian-egyptt, georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+.center {
+  text-align: center;
+}
+
+.l3:nth-child(4n+1) {
+  clear: left;
+}
+
+.navcolor {
+  background-color: #efefeb;
+}
+
+nav ul a {
+  color: #0192B5 !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
+
+
+a#logo-container {
+  text-decoration: none !important;
+}
+
 body {
    display: flex !important;
    min-height: 100vh !important;
    flex-direction: column !important;
+   background-color: #F5F5F1 !important;
+   color: #333333 !important;
+   font-family: Arial, Helvetica, sans-serif !important;
  }
 
  main {

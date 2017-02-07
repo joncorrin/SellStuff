@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% if @listing.image_url.nil? %>
+  <%= image_tag "https://s3.amazonaws.com/placerater/default.png" %>
+<% else %>
+  <%= image_tag @listing.image_url %>
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @listing.name %>

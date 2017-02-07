@@ -1,3 +1,3 @@
 class Listing < ApplicationRecord
-  mount_uploader :images, ImagesUploader
+  mount_uploader :image, ImageUploader
 end

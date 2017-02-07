@@ -35,12 +35,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'figaro'
 gem 'bootstrap-sass'
 gem 'materialize-sass'
-gem 'carrierwave'
-gem 'fog-aws'
 gem 'figaro'
+gem 'carrierwave'
+gem "fog-aws"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

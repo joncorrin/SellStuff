@@ -19,7 +19,7 @@ if Rails.env.production?
     if Rails.env.development?
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     else
-      nil
+      "https://s3-us-west-2.amazonaws.com/joncorrin/"
     end
   end
 

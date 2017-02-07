@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-
-<%= image_tag @listing.image_url %>
-
+<% if @listing.image_url.nil? %>
+  <%= image_tag "https://s3.amazonaws.com/joncorrin/default.png" %>
+<% else %>
+  <%= image_tag @listing.image_url %>
+<% end %>
 
 <p>
   <strong>Name:</strong>

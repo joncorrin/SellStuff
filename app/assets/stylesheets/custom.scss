@@ -10,6 +10,10 @@ $secondary-color: color("yellow", "base") !default;
   max-width: 100%;
 }
 
+.buttoncolor {
+  background-color: #0192B5 !important;
+}
+
 .blue.accent-4 {
   background-color: #ffffff !important;
 }
@@ -19,6 +23,7 @@ $secondary-color: color("yellow", "base") !default;
   font-family: guardian-egyptt, georgia, serif;
   font-weight: 400;
   font-size: 30px;
+  padding-left: 50px !important;
 }
 .center {
   text-align: center;
@@ -61,6 +66,12 @@ body {
 .btn-flat:focus, .btn-flat:hover {
   text-decoration: none;
   color: #333
+}
+
+@media only screen and (max-width: 992px) {
+  .brand-logo {
+    padding-left: 0px !important;
+  }
 }
 
 /*input[type="file"] {

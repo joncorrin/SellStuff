@@ -1,6 +1,16 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="section no-pad-bot" id="index-banner" style="padding-bottom: 50px;">
+  <div class="container">
+    <br><br>
+    <h1 class="header center black-text">2nd-hand items <br> from around the world.</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">Discover one-of-a-kind items. <br> Click here to create your listing.</h5>
+    </div>
+  </div>
+</div>
+
   <div class="row">
     <% @listings.each do |listing| %>
       <div class="col s12 m6 l3">
@@ -27,5 +37,5 @@
 <% if user_signed_in? %>
   <a href="<%= new_listing_path %>", class="btn-floating btn-large waves-effect waves-light">
     <i class="material-icons">add</i>
-  </a>Create Listing
+  </a>
 <% end %>

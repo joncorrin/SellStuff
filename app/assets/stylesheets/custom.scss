@@ -5,9 +5,26 @@ $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("yellow", "base") !default;
 @import "materialize";
 
+.container {
+  width: 94% !important;
+}
+#index-banner {
+  width: 100% !important;
+  background: url("banner.jpg") no-repeat;
+  height: 100%;
+  h1, h5 {
+    font-family: guardian-egyptt, georgia, serif;
+    text-align: left;
+  }
+}
 .card.large img {
   max-height: 100%;
   max-width: 100%;
+}
+
+.sellerImage {
+  max-width: 100px !important;
+  max-height: 100px !important;
 }
 
 .buttoncolor {
@@ -39,6 +56,7 @@ $secondary-color: color("yellow", "base") !default;
 
 .navcolor {
   background-color: #efefeb;
+  margin-bottom: 15px;
 }
 
 nav ul a {

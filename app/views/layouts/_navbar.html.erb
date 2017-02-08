@@ -1,7 +1,7 @@
 <nav class="navcolor" role="navigation">
   <%= link_to "SellStuff", root_path, class:"brand-logo", id:"logo-container", style:"padding-left: 10px;" %>
   <div class="nav-wrapper container">
-    <ul class=" hide-on-med-and-down">
+    <ul class=" hide-on-med-and-down" style="padding-left: 30px;">
       <li><%= link_to "About", pages_about_path %></li>
       <li><%= link_to "Contact", pages_contact_path %></li>
     </ul>
@@ -20,6 +20,7 @@
       <li><%= link_to "About", root_path %></li>
       <li><%= link_to "Contact", pages_contact_path %></li>
       <% if user_signed_in? %>
+      <li><%= link_to "Manage Listings", seller_path %></li>
       <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       <% else %>

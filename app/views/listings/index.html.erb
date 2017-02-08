@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
   <div class="row">
@@ -12,7 +13,7 @@
             <p><%= link_to 'Show', listing, class:"waves-effect waves-teal btn-flat" %></p>
             <p><%= link_to 'Edit', edit_listing_path(listing), class:"waves-effect waves-teal btn-flat"  %></p>
             <p><%= link_to 'Destroy', listing, class:"waves-effect waves-teal btn-flat",  method: :delete, data: { confirm: 'Are you sure?' } %></p>
-          </div>  
+          </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= listing.name %><i class="material-icons right">close</i></span>
             <p><%= listing.description %></p>

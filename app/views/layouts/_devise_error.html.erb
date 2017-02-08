@@ -1,0 +1,12 @@
+<% if @user.errors.any? %>
+  <div id="card-alert" class="card red lighten-5">
+    <div class="card-content red-text">
+      <h5><%= pluralize(@user.errors.count, "error") %> prohibited this listing from being saved:</h5>
+    </div>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li style="padding-left: 30px; padding-bottom: 20px;"><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

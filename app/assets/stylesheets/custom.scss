@@ -9,14 +9,15 @@ $secondary-color: color("yellow", "base") !default;
   width: 94% !important;
 }
 #index-banner {
-  width: 100% !important;
-  background: url("banner.jpg") no-repeat;
-  height: 100%;
+  background: url("http://27ldk4j1esh2tto962ds2vk1.wpengine.netdna-cdn.com/wp-content/uploads/skateboard-1200x330.jpg") no-repeat;
+  background-size: cover !important;
   h1, h5 {
     font-family: guardian-egyptt, georgia, serif;
     text-align: left;
   }
 }
+
+
 .card.large img {
   max-height: 100%;
   max-width: 100%;
@@ -93,6 +94,18 @@ body {
 @media only screen and (max-width: 992px) {
   .brand-logo {
     padding-left: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .left-links {
+    padding-left: 120px !important;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .left-links {
+    padding-left: 60px !important;
   }
 }
 

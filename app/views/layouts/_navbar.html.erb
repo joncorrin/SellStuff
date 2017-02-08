@@ -1,10 +1,12 @@
 <nav class="navcolor" role="navigation">
   <%= link_to "SellStuff", root_path, class:"brand-logo", id:"logo-container", style:"padding-left: 10px;" %>
   <div class="nav-wrapper container">
-    <ul class=" hide-on-med-and-down" style="padding-left: 30px;">
-      <li><%= link_to "About", pages_about_path %></li>
-      <li><%= link_to "Contact", pages_contact_path %></li>
-    </ul>
+    <div class="left-links" style="padding-left: 30px;">
+      <ul class=" hide-on-med-and-down">
+        <li><%= link_to "About", pages_about_path %></li>
+        <li><%= link_to "Contact", pages_contact_path %></li>
+      </ul>
+    </div>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
       <li><%= link_to "Manage Listings", seller_path %></li>

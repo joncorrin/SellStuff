@@ -10,6 +10,10 @@
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4"><%= link_to "#{listing.name}", listing %><br><%= number_to_currency(listing.price) %><i class="material-icons right">more_vert</i></span>
+            <% if (user_signed_in?) && (current_user == listing.user) %>
+              <p><%= link_to 'Edit', edit_listing_path(listing), class:"waves-effect waves-teal btn-flat"  %></p>
+              <p><%= link_to 'Destroy', listing, class:"waves-effect waves-teal btn-flat",  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= link_to "#{listing.name}", listing %><i class="material-icons right">close</i></span>

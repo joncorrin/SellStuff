@@ -6,16 +6,17 @@
       <div class="col s12 m6 l3">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <%= image_tag listing.image_url, class:"activator" %>
+            <%= link_to image_tag(listing.image_url), listing, class:"activator" %>
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><%= listing.name %><br><%= number_to_currency(listing.price) %><i class="material-icons right">more_vert</i></span>
-            <p><%= link_to 'Show', listing, class:"waves-effect waves-teal btn-flat" %></p>
-            <p><%= link_to 'Edit', edit_listing_path(listing), class:"waves-effect waves-teal btn-flat"  %></p>
-            <p><%= link_to 'Destroy', listing, class:"waves-effect waves-teal btn-flat",  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <span class="card-title activator grey-text text-darken-4"><%= link_to "#{listing.name}", listing %><br><%= number_to_currency(listing.price) %><i class="material-icons right">more_vert</i></span>
+            <% if (user_signed_in?) && (current_user == listing.user) %>
+              <p><%= link_to 'Edit', edit_listing_path(listing), class:"waves-effect waves-teal btn-flat"  %></p>
+              <p><%= link_to 'Destroy', listing, class:"waves-effect waves-teal btn-flat",  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><%= listing.name %><i class="material-icons right">close</i></span>
+            <span class="card-title grey-text text-darken-4"><%= link_to "#{listing.name}", listing %><i class="material-icons right">close</i></span>
             <p>Seller: <%= listing.user.name %></p>
             <p><%= listing.description %></p>
           </div>
@@ -27,6 +28,8 @@
 
 <br>
 
-<a href="<%= new_listing_path %>", class="btn-floating btn-large waves-effect waves-light red">
-  <i class="material-icons">add</i>
-</a>
+<% if user_signed_in? %>
+  <a href="<%= new_listing_path %>", class="btn-floating btn-large waves-effect waves-light">
+    <i class="material-icons">add</i>
+  </a>Create Listing
+<% end %>

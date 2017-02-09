@@ -11,6 +11,8 @@
     <h3><%= @listing.name %></h3>
     <p><%= number_to_currency(@listing.price) %>
     <p>Description: <%= @listing.description %></p>
+    <br>
+    <%= link_to "Buy It Now", new_listing_order_path(@listing), class:"btn waves-effect buttoncolor" %>
   </div>
 </div>
 

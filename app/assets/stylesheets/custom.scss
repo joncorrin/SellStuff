@@ -11,6 +11,8 @@ $secondary-color: color("yellow", "base") !default;
 #index-banner {
   background: url("http://27ldk4j1esh2tto962ds2vk1.wpengine.netdna-cdn.com/wp-content/uploads/skateboard-1200x330.jpg") no-repeat;
   background-size: cover !important;
+  margin-bottom: 35px !important;
+  padding-bottom: 15px !important;
   h1, h5 {
     font-family: guardian-egyptt, georgia, serif;
     text-align: left;

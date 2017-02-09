@@ -9,9 +9,16 @@
     </div>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-      <li><%= link_to "Manage Listings", seller_path %></li>
-      <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <a class="dropdown-button btn buttoncolor" href="#" data-activates="dropdown1">
+        <div id="dropD" style="color: #ffffff;"><%= current_user.name %></div></a>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><%= link_to "Bought", purchases_path %></li>
+        <li><%= link_to "Sold", sales_path %></li>
+        <li><%= link_to "Listings", seller_path %></li>
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
       <% else %>
       <li><%= link_to "Sign In", new_user_session_path %></li>
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -22,6 +29,8 @@
       <li><%= link_to "About", root_path %></li>
       <li><%= link_to "Contact", pages_contact_path %></li>
       <% if user_signed_in? %>
+      <li><%= link_to "Purchase History", purchases_path %></li>
+      <li><%= link_to "Sales History", sales_path %></li>
       <li><%= link_to "Manage Listings", seller_path %></li>
       <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

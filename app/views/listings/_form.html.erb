@@ -13,6 +13,10 @@
   </div>
 <% end %>
 
+<div id="stripe_error" style="display: none;">
+  <noscript>Javascript needs to beenabled!</noscript>
+</div>
+
 <div class="row">
   <form class="col s12">
     <div class="row">
@@ -53,6 +57,27 @@
           </div>
         </form>
       </div>
+    </div>
+
+    <h3>Bank Account Info</h3>
+
+    <div class="row">
+        <div class="input-field col s3">
+          <%= text_field_tag :country, nil, { name: nil, 'data-stripe': "country", class:"validate"} %>
+          <%= label_tag :country %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+          <%= text_field_tag :routing_number, nil, { name: nil, 'data-stripe': "routingNumber", class:"validate"} %>
+          <%= label_tag :routing_number %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+          <%= text_field_tag :account_number, nil, { name: nil, 'data-stripe': "accountNumber", class:"validate"} %>
+          <%= label_tag :account_number %>
+        </div>
     </div>
 
     <div class="row">

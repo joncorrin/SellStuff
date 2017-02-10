@@ -9,8 +9,8 @@
     </div>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-      <a class="dropdown-button btn buttoncolor" href="#" data-activates="dropdown1">
-        <div id="dropD" style="color: #ffffff;"><%= current_user.name %></div></a>
+      <a class="dropdown-button btn" style="background-color: #808080 !important;" href="#" data-activates="dropdown1">
+        <div id="dropD" style="color: #ffffff;">Settings</div></a>
       <ul id="dropdown1" class="dropdown-content">
         <li><%= link_to "Bought", purchases_path %></li>
         <li><%= link_to "Sold", sales_path %></li>

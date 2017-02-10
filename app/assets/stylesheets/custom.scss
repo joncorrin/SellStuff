@@ -19,6 +19,11 @@ $secondary-color: color("yellow", "base") !default;
   }
 }
 
+#orderImage {
+  max-width: 350px !important;
+  max-height: 500px !important;
+}
+
 
 .card.large img {
   max-height: 100%;
@@ -108,6 +113,12 @@ body {
 @media only screen and (min-width: 1400px) {
   .left-links {
     padding-left: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  #orderImage {
+    max-width: 250px !important;
   }
 }
 

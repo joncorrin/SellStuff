@@ -1,33 +1,72 @@
-<%= form_for([@listing, @order]) do |f| %>
-<% if @order.errors.any? %>
-  <div id="card-alert" class="card red lighten-5">
-    <div class="card-content red-text">
-      <h5><%= pluralize(@order.errors.count, "error") %> prohibited this listing from being saved:</h5>
-    </div>
-    <ul>
-    <% @order.errors.full_messages.each do |message| %>
-      <li style="padding-left: 30px; padding-bottom: 20px;"><%= message %></li>
+<div class="row">
+  <div class="col s4">
+  </div>
+  <div class="col s8">
+    <h3 style="color: #9e9e9e;">Order Form</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col s4">
+    <%= image_tag @listing.image.url, id:"orderImage" %>
+    <h4><%= @listing.name %></h4>
+    <h5><%= number_to_currency(@listing.price) %></h5>
+  </div>
+  <div class="col s8">
+    <%= form_for([@listing, @order]) do |f| %>
+    <% if @order.errors.any? %>
+      <div id="card-alert" class="card red lighten-5">
+        <div class="card-content red-text">
+          <h5><%= pluralize(@order.errors.count, "error") %> prohibited this listing from being saved:</h5>
+        </div>
+        <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li style="padding-left: 30px; padding-bottom: 20px;"><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    </ul>
-  </div>
-<% end %>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
+    <div id="stripe_error" style="display: none;">
+      <noscript>Javascript needs to beenabled!</noscript>
+    </div>
+      <div class="field">
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+      </div>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
+      <div class="field">
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </div>
 
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
+      <div class="field">
+        <%= f.label :state %>
+        <%= f.text_field :state %>
+      </div>
 
-  <div class="btn waves-effect buttoncolor">
-    <%= f.submit %>
+      <div class="row">
+        <div class="col s8 field">
+          <%= label_tag :card_number, "Credit Card Number" %>
+          <%= text_field_tag :card_number, nil, { name: nil, 'data-stripe': "number" } %>
+        </div>
+        <div class="col s4 field">
+          <%= label_tag :card_code, "CVC" %>
+          <%= text_field_tag :card_code, nil, { name: nil, 'data-stripe': "cvc" } %>
+        </div>
+      </div>
+      <%= label_tag nil, "Expiration Date" %>
+      <div class="row">
+        <div class="input-field col s3">
+          <%= select_month nil, { use_two_digit_numbers: true },  {name: nil, 'data-stripe': "exp-month"} %>
+        </div>
+        <div class="input-field col s3">
+          <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, {name: nil, 'data-stripe': "exp-year"} %>
+        </div>
+      </div>
+
+      <div class="btn waves-effect buttoncolor">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

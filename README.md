@@ -1,24 +1,25 @@
-# README
+# SellStuff Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This rails web application is built around an ecommerce site similar to Etsy.
+Sellers list items that buyers can purchase. The app displays the items,
+provides a description, and handles all transactions.
 
-Things you may want to cover:
+Things this app covers:
 
-* Ruby version
+* Ruby and Rails
 
-* System dependencies
+* Ecommerce
 
-* Configuration
+* Stripe API
 
-* Database creation
+* Two-sided marketplace
 
-* Database initialization
+* User authentication and validation
 
-* How to run the test suite
+* Web design
 
-* Services (job queues, cache servers, search engines, etc.)
+* Relational databases (PSQL)
 
-* Deployment instructions
+* Heroku deployment
 
-* ...
+* ... and more!

@@ -1,10 +1,10 @@
 # SellStuff Web App
 
-This rails web application is built around an ecommerce site similar to Etsy.
-Sellers list items that buyers can purchase. The app displays the items,
-provides a description, and handles all transactions.
+This is a rails e-commerce application. Sellers can list products, input a description, and leave them for sale.
+Buyers can look through an index of products, easily find and investigate a product, and purchase the product
+securely through Stripe API. 
 
-Things this app covers:
+This rails app covers:
 
 * Ruby and Rails
 
@@ -16,7 +16,7 @@ Things this app covers:
 
 * User authentication and validation
 
-* Web design
+* Responsive web design
 
 * Relational databases (PSQL)
 
